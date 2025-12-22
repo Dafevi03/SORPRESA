@@ -1,4 +1,4 @@
-/* Fuentes y reset */
+/* Reset y fuentes */
 * {
   margin: 0;
   padding: 0;
@@ -7,49 +7,60 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #4B0000, #800020);
+  background: linear-gradient(135deg, #330000, #800020);
   color: #fff;
-  text-align: center;
   min-height: 100vh;
   overflow-x: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  position: relative;
 }
 
-/* LOGIN */
+/* Contenedor principal */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+}
+
+/* LOGIN centrado */
 #login {
   background: rgba(255, 255, 255, 0.05);
   padding: 30px 40px;
   border-radius: 20px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.5);
-  width: 90%;
+  box-shadow: 0 0 30px rgba(0,0,0,0.5);
+  width: 100%;
   max-width: 400px;
-  position: relative;
-  overflow: hidden;
+  text-align: center;
+  margin-bottom: 30px;
   transition: transform 0.5s ease;
 }
 
 #login h1 {
   margin-bottom: 20px;
-  font-size: 2em;
+  font-size: 2.2em;
+  letter-spacing: 2px;
 }
 
-/* Input y button */
+/* Inputs y botones */
 input {
   display: block;
   margin: 15px auto;
   padding: 12px;
-  width: 80%;
-  border-radius: 10px;
+  width: 85%;
+  border-radius: 12px;
   border: none;
   outline: none;
   font-size: 1em;
+  transition: box-shadow 0.3s ease;
 }
 
 input:focus {
-  box-shadow: 0 0 10px #aa0000;
+  box-shadow: 0 0 12px #aa0030;
 }
 
 button {
@@ -57,7 +68,7 @@ button {
   cursor: pointer;
   background: #800020;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
   color: #fff;
   font-weight: bold;
   transition: all 0.3s ease;
@@ -68,13 +79,50 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* Pistas */
+/* Pistas debajo del login */
 .pistas {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 15px;
-  margin: 20px auto;
-  width: 90%;
-  border-radius: 15px;
+  width: 100%;
+  max-width: 450px;
+}
+
+/* Acertijos */
+.acertijo-box {
+  background: rgba(255,255,255,0.1);
+  margin: 15px 0;
+  padding: 10px 15px;
+  border-radius: 12px;
+  text-align: left;
+  transition: background 0.3s ease;
+}
+
+.acertijo-box:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.ver-pista {
+  background: #800020;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.ver-pista:hover {
+  background: #aa0030;
+  transform: scale(1.05);
+}
+
+.acertijo-text {
+  display: none;
+  margin-top: 10px;
+  padding: 10px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 10px;
+  line-height: 1.5;
+  font-size: 0.95em;
 }
 
 /* Error */
@@ -127,27 +175,34 @@ button:hover {
   color: #fff;
 }
 
-/* Animaciones de gatos */
-.gatos-container {
-  position: absolute;
+/* Gatos animados */
+.emojis-container {
+  position: fixed;
   width: 100%;
   height: 100%;
   pointer-events: none;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
 
 .gato {
   position: absolute;
   font-size: 2em;
   animation: floatCat linear infinite;
+  user-select: none;
 }
 
 @keyframes floatCat {
   0% { transform: translateY(100vh) translateX(0) rotate(0deg); opacity: 0; }
-  50% { opacity: 1; }
-  100% { transform: translateY(-10vh) translateX(20vw) rotate(360deg); opacity: 0; }
+  25% { opacity: 1; }
+  50% { transform: translateY(50vh) translateX(20vw) rotate(180deg); }
+  75% { opacity: 1; }
+  100% { transform: translateY(-10vh) translateX(40vw) rotate(360deg); opacity: 0; }
 }
 
-/* Efectos */
+/* Animaciones */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px);}
   to { opacity: 1; transform: translateY(0);}

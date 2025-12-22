@@ -8,44 +8,68 @@
 </head>
 <body>
 
-<!-- LOGIN -->
-<div id="login">
-  <h1>🐱 Solo para ti</h1>
+<div class="container">
 
-  <div class="emojis">
-    <span class="gato">🐱</span>
-    <span class="gato">🐱</span>
-    <span class="gato">🐱</span>
+  <!-- LOGIN + PISTAS -->
+  <div id="login-container">
+
+    <!-- LOGIN -->
+    <div id="login">
+      <h1>🐱 Solo para ti</h1>
+
+      <input type="text" id="user" placeholder="Usuario">
+      <input type="password" id="pass" placeholder="Contraseña">
+      <button onclick="comprobar()">Entrar</button>
+
+      <p id="error"></p>
+    </div>
+
+    <!-- PISTAS DE ACERTIJOS -->
+    <div class="pistas">
+      <h3>Pistas 🧩</h3>
+
+      <div class="acertijo-box">
+        <button class="ver-pista">Ver pista del usuario</button>
+        <p class="acertijo-text" id="acertijo-usuario">
+          En un intercambio donde los nombres se entrelazan como hilos invisibles, uno siempre aparece primero, humilde y en minúscula, mientras que el otro completa el ciclo con la misma discreción.  
+          Entre ellos, un conector único, elevado y visible como un faro, marca la unión y diferencia sin alterar la esencia de cada parte.  
+          Solo quien recuerde cómo nombramos nuestros secretos al obsequiarse algo preciado, respetando el orden exacto y el detalle singular de esa letra que se destaca, podrá reconstruir la fórmula completa que inicia con el primer nombre, atraviesa el faro visible y termina con el segundo.
+        </p>
+      </div>
+
+      <div class="acertijo-box">
+        <button class="ver-pista">Ver pista de la contraseña</button>
+        <p class="acertijo-text" id="acertijo-pass">
+          Hay un instante que se refleja en sí mismo, como un espejo que devuelve la misma imagen invertida: un día, un mes y un año que nunca cambian cuando los miras desde ambos extremos.  
+          Solo los ojos atentos reconocerán el patrón simétrico que guarda nuestro inicio.  
+          Pero los números no son suficientes: la esencia de lo que más echamos de menos se esconde en tres guardianes invisibles, representados por letras que deben respetar mayúsculas y minúsculas.  
+          Primero, la inicial que me nombra a mí, seguido de aquellas que evocan a los centinelas de cuatro patas que cuidaron cada instante.  
+          Solo combinando el reflejo numérico con estas iniciales, en el orden exacto y respetando cada mayúscula, se abrirá la puerta que protege nuestro 2025.
+        </p>
+      </div>
+
+    </div>
+
+  </div> <!-- fin login-container -->
+
+  <!-- CONTENIDO OCULTO -->
+  <div id="contenido" style="display:none;">
+    <h1>Nuestro 2025 🐱</h1>
+
+    <div class="galeria">
+      <img src="fotos/2025_01.jpg" alt="Foto 1">
+      <img src="fotos/2025_02.jpg" alt="Foto 2">
+    </div>
+
+    <a class="drive" href="https://drive.google.com/XXXX" target="_blank">
+      📁 Descargar mi dibujo
+    </a>
   </div>
 
-  <input type="text" id="user" placeholder="Usuario">
-  <input type="password" id="pass" placeholder="Contraseña">
-  <button onclick="comprobar()">Entrar</button>
-
-  <div class="pistas">
-    <h3>Pistas 🧩</h3>
-    <p>👤 Usuario: el lugar donde nos hicimos esta foto</p>
-    <p>🔑 Contraseña: el mes de nuestro aniversario</p>
-  </div>
-
-  <p id="error"></p>
 </div>
 
-<!-- CONTENIDO OCULTO -->
-<div id="contenido" style="display:none;">
-  <h1>Nuestro 2025 🐱</h1>
-
-  <div class="galeria">
-    <img src="fotos/2025_01.jpg" alt="Foto 1">
-    <img src="fotos/2025_02.jpg" alt="Foto 2">
-  </div>
-
-  <a class="drive" href="https://drive.google.com/XXXX" target="_blank">
-    📁 Descargar mi dibujo
-  </a>
-</div>
+<div class="emojis-container"></div>
 
 <script src="script.js"></script>
 </body>
 </html>
-
