@@ -1,0 +1,43 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #ffeef2;
+  text-align: center;
+}
+
+input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 200px;
+}
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.pistas {
+  background: #fff;
+  padding: 15px;
+  margin: 20px auto;
+  width: 300px;
+  border-radius: 10px;
+}
+
+.galeria {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.galeria img {
+  width: 250px;
+  border-radius: 15px;
+}
+
+.drive {
+  display: inline-block;
+  margin-top: 30px;
+  font-size: 18px;
+}

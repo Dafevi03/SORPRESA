@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Nuestra sorpresa ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="login">
+  <h1>💌 Solo para ti</h1>
+
+  <input type="text" id="user" placeholder="Usuario">
+  <input type="password" id="pass" placeholder="Contraseña">
+  <button onclick="comprobar()">Entrar</button>
+
+  <div class="pistas">
+    <h3>Pistas 🧩</h3>
+    <p>👤 Usuario: el lugar donde nos hicimos esta foto</p>
+    <p>🔑 Contraseña: el mes de nuestro aniversario</p>
+  </div>
+
+  <p id="error"></p>
+</div>
+
+<!-- CONTENIDO OCULTO -->
+<div id="contenido" style="display:none;">
+  <h1>Nuestro 2025 ❤️</h1>
+
+  <div class="galeria">
+    <img src="fotos/2025_01.jpg">
+    <img src="fotos/2025_02.jpg">
+  </div>
+
+  <a class="drive" href="https://drive.google.com/XXXX" target="_blank">
+    📁 Descargar mi dibujo
+  </a>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
