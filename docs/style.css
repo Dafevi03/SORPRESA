@@ -1,6 +1,4 @@
-/* =========================
-   RESET Y BASE
-========================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -16,9 +14,6 @@ body {
   position: relative;
 }
 
-/* =========================
-   CONTENEDOR PRINCIPAL
-========================= */
 .container {
   display: flex;
   flex-direction: column;
@@ -31,9 +26,6 @@ body {
   padding: 20px;
 }
 
-/* =========================
-   LOGIN
-========================= */
 #login {
   background: rgba(255, 255, 255, 0.05);
   padding: 30px 40px;
@@ -51,7 +43,6 @@ body {
   letter-spacing: 2px;
 }
 
-/* Inputs */
 input {
   display: block;
   margin: 15px auto;
@@ -67,7 +58,6 @@ input:focus {
   box-shadow: 0 0 12px #aa0030;
 }
 
-/* Botones */
 button {
   padding: 12px 25px;
   cursor: pointer;
@@ -84,9 +74,6 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* =========================
-   PISTAS
-========================= */
 .pistas {
   width: 100%;
   max-width: 450px;
@@ -123,7 +110,6 @@ button:hover {
   border-radius: 10px;
 }
 
-/* Error */
 #error {
   color: #ff4444;
   font-weight: bold;
@@ -131,16 +117,12 @@ button:hover {
   animation: shake 0.5s;
 }
 
-/* =========================
-   CONTENIDO DESBLOQUEADO
-========================= */
 #contenido {
   width: 100%;
   max-width: 1200px;
   animation: fadeIn 1s ease forwards;
 }
 
-/* Título álbum */
 .titulo-album {
   text-align: center;
   margin: 40px 0;
@@ -148,7 +130,6 @@ button:hover {
   letter-spacing: 2px;
 }
 
-/* Texto descarga */
 .descarga-texto {
   text-align: center;
   font-size: 1.2em;
@@ -156,32 +137,68 @@ button:hover {
   color: #ffdede;
 }
 
-/* =========================
-   GALERÍA
-========================= */
 .galeria {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  padding: 20px;
-  perspective: 1000px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 35px;
+  padding: 40px 20px;
+  perspective: 1200px;
 }
 
 .galeria img {
   width: 100%;
-  border-radius: 16px;
+  height: auto;
+  border-radius: 18px;
   cursor: pointer;
+
+
+  background: #140007;
+  padding: 10px;
+  border: 1px solid rgba(255,255,255,0.08);
+
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.5),
+    inset 0 0 0 1px rgba(255,255,255,0.05);
+
+ 
   opacity: 0;
-  transform: translateY(30px) rotate(-2deg);
-  animation: aparecer 0.8s forwards;
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  transform:
+    translateY(40px)
+    scale(0.95)
+    rotateX(8deg);
+
+  animation: galeriaEntrada 1s ease forwards;
+
+  transition:
+    transform 0.6s ease,
+    box-shadow 0.6s ease,
+    filter 0.6s ease;
 }
 
-/* Hover animado */
+
 .galeria img:hover {
-  transform: scale(1.05) rotate(0deg);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+  transform:
+    translateY(-12px)
+    scale(1.05)
+    rotateX(0deg);
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.8),
+    0 0 0 1px rgba(255,255,255,0.12);
+
+  filter: brightness(1.05) contrast(1.05);
+}
+
+
+@keyframes galeriaEntrada {
+  to {
+    opacity: 1;
+    transform:
+      translateY(0)
+      scale(1)
+      rotateX(0deg);
+  }
 }
 
 @keyframes aparecer {
@@ -191,9 +208,7 @@ button:hover {
   }
 }
 
-/* =========================
-   DRIVE
-========================= */
+
 .drive {
   display: inline-block;
   margin: 30px auto;
@@ -211,9 +226,7 @@ button:hover {
   color: #fff;
 }
 
-/* =========================
-   GATOS FLOTANTES
-========================= */
+
 .emojis-container {
   position: fixed;
   width: 100%;
@@ -233,9 +246,7 @@ button:hover {
   opacity: 0.4;
 }
 
-/* =========================
-   LIGHTBOX
-========================= */
+
 .lightbox {
   position: fixed;
   top: 0;
@@ -305,7 +316,7 @@ button:hover {
   100% { transform: translateX(0); }
 }
 
-/* Centrar texto de descarga y botón */
+
 #contenido .descarga-texto,
 #contenido .drive {
   display: block;
@@ -313,9 +324,7 @@ button:hover {
   text-align: center;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+
 @media (max-width: 768px) {
   .nav { font-size: 40px; }
 }

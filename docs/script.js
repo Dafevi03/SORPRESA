@@ -1,12 +1,12 @@
-/* =========================
-   LOGIN
-========================= */
-function comprobar() {
-  const usuarioCorrecto = "talycual";
-  const passCorrecta = "250825dcn";
+/* 
+   Funcion para q el login detecte mayusculas y minusculas
+*/
 
-  const user = document.getElementById("user").value.toLowerCase();
-  const pass = document.getElementById("pass").value.toLowerCase();
+function comprobar() {
+  const usuarioCorrecto = "talYcual";
+  const passCorrecta = "250825DCN";
+  const user = document.getElementById("user").value;
+  const pass = document.getElementById("pass").value;
 
   if (user === usuarioCorrecto && pass === passCorrecta) {
     document.getElementById("login-container").style.display = "none";
@@ -19,9 +19,8 @@ function comprobar() {
   }
 }
 
-/* =========================
-   GATOS FLOTANDO
-========================= */
+
+/* con esta vaina los gatos flotan*/
 function crearGatos(cantidad) {
   const container = document.querySelector(".emojis-container");
 
@@ -40,9 +39,7 @@ window.addEventListener("load", () => {
   crearGatos(15);
 });
 
-/* =========================
-   ACERTIJOS
-========================= */
+/* Click para que se abran los acertijos */
 document.querySelectorAll(".ver-pista").forEach((btn) => {
   btn.addEventListener("click", () => {
     const texto = btn.nextElementSibling;
@@ -56,9 +53,7 @@ document.querySelectorAll(".ver-pista").forEach((btn) => {
   });
 });
 
-/* =========================
-   GALERÍA + LIGHTBOX
-========================= */
+/* Galeria colocada y click en las fotos */
 const imagenes = document.querySelectorAll(".galeria img");
 let indiceActual = 0;
 
@@ -101,7 +96,7 @@ function mostrarImagen() {
   lightboxImg.src = imagenes[indiceActual].src;
 }
 
-// Navegación
+// Navegacion y flechas diagonales ou yea
 prev.addEventListener("click", (e) => {
   e.stopPropagation();
   indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
@@ -130,4 +125,8 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     lightbox.style.display = "none";
   }
+});
+
+imagenes.forEach((img, index) => {
+  img.style.animationDelay = `${index * 0.08}s`;
 });
